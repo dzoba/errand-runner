@@ -23,3 +23,11 @@
   margin-top: 20px;
   font-size: 18px;
 }
+
+.character {
+  background-image: url('../public/character.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #ccc;
+}

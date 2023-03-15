@@ -18,7 +18,7 @@ const TileTypes = {
   POND: "blue",
   SHRUB: "darkgreen",
   HOUSE: "saddlebrown",
-  DOOR: "brown",
+  DOOR: "peru",
   CHARACTER: "white",
 };
 
@@ -272,7 +272,7 @@ function App() {
             {row.map((tile, colIndex) => (
               <div
                 key={colIndex}
-                className="tile"
+                className={`tile ${rowIndex === characterPos.y && colIndex === characterPos.x ? 'character' : ''}`}
                 style={{
                   backgroundColor:
                     rowIndex === characterPos.y && colIndex === characterPos.x
