@@ -174,6 +174,8 @@ function App() {
   const [errand, setErrand] = useState(null);
   const [itemsDelivered, setItemsDelivered] = useState(0);
   const [currentMapCoords, setCurrentMapCoords] = useState({ row: 0, col: 0 });
+  const [onDoorHouseOwner, setOnDoorHouseOwner] = useState(null);
+
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -196,22 +198,27 @@ function App() {
             (h) => h.x + 2 === newX && h.y + 3 === newY
           );
           if (house) {
+            setOnDoorHouseOwner(house.house.name);
             if (!errand) {
-              const targetHouse = currentMap.houses.find(
-                (h) => h.house.name !== house.house.name
-              );
+              const randomMapRow = Math.floor(Math.random() * SUPER_MAP_SIZE);
+              const randomMapCol = Math.floor(Math.random() * SUPER_MAP_SIZE);
+              const targetMap = superMap[randomMapRow][randomMapCol];
+              const targetHouse = targetMap.houses[Math.floor(Math.random() * targetMap.houses.length)];
+          
               const item = items[Math.floor(Math.random() * items.length)];
               setErrand({
                 item,
                 targetHouse: targetHouse.house.name,
-                targetMap: currentMapCoords,
+                targetMap: { row: randomMapRow, col: randomMapCol },
               });
-            } else if (house.house.name === errand.targetHouse) {
+            } else if (house.house.name === errand.targetHouse && currentMapCoords.row === errand.targetMap.row && currentMapCoords.col === errand.targetMap.col) {
               house.house.itemsDelivered++;
               setItemsDelivered(itemsDelivered + 1);
               setErrand(null);
             }
-          }
+          } else {
+            setOnDoorHouseOwner(null);
+          }   
         } else if (newX < 0) {
           if (currentMapCoords.col > 0) {
             setCurrentMapCoords({ ...currentMapCoords, col: currentMapCoords.col - 1 });
@@ -286,10 +293,17 @@ function App() {
         </div>
         {errand && (
           <div>
-            {errand.targetHouse} map: {errand.targetMap.row},{" "}
+            {errand.targetHouse} lives on map: {errand.targetMap.row},{" "}
             {errand.targetMap.col}
+            <br />
+            {houseNames.find(
+              (houseName) =>
+                currentMap.houses.find((house) => house.house.name === houseName)
+            )}{" "}
+            asks you to take {errand.item} to {errand.targetHouse}'s house
           </div>
         )}
+        {onDoorHouseOwner && <div>{onDoorHouseOwner}'s House</div>}
       </div>
     </div>
   );
