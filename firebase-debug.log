@@ -1,0 +1,14 @@
+[debug] [2023-03-16T00:47:40.878Z] ----------------------------------------------------------------------
+[debug] [2023-03-16T00:47:40.879Z] Command:       /Users/dzoba/.nvm/versions/node/v16.19.0/bin/node /Users/dzoba/.nvm/versions/node/v16.19.0/bin/firebase deploy
+[debug] [2023-03-16T00:47:40.879Z] CLI Version:   11.24.1
+[debug] [2023-03-16T00:47:40.879Z] Platform:      darwin
+[debug] [2023-03-16T00:47:40.879Z] Node Version:  v16.19.0
+[debug] [2023-03-16T00:47:40.882Z] Time:          Wed Mar 15 2023 20:47:40 GMT-0400 (Eastern Daylight Time)
+[debug] [2023-03-16T00:47:40.882Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-03-16T00:47:40.910Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-03-16T00:47:40.910Z] > authorizing via signed-in user (chris@dzoba.com)
+[debug] [2023-03-16T00:47:40.910Z] [iam] checking project errand-runner-42de7 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-03-16T00:47:40.911Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/errand-runner-42de7:testIamPermissions [none]
+[debug] [2023-03-16T00:47:40.911Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/errand-runner-42de7:testIamPermissions x-goog-quota-user=projects/errand-runner-42de7
+[debug] [2023-03-16T00:47:40.911Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/errand-runner-42de7:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
