@@ -1,3 +1,6 @@
+![Errand Runner screen shot](screenshot.png?raw=true "Errand Runner")
+
+
 # Errand Runner
 
 This is a react-based errand running RPG with code written entirely by GPT-4 (via the ChatGPT interface). 
