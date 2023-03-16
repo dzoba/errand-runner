@@ -321,7 +321,8 @@ function App() {
             <h2>Errand Running Game</h2>
             <p>
               Use the arrow keys to control your character to move him
-              across the map and run errands for people living in this world.
+              across the map and run errands for people living in this world. 
+              Visit a house and read the instructions at the bottom.
             </p>
             <p>Author: Chris Dzoba & GPT-4</p>
             <p>Twitter: <a href="https://twitter.com/ChrisDzoba">@chrisdzoba</a></p>
