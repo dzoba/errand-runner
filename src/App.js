@@ -175,7 +175,11 @@ function App() {
   const [itemsDelivered, setItemsDelivered] = useState(0);
   const [currentMapCoords, setCurrentMapCoords] = useState({ row: 0, col: 0 });
   const [onDoorHouseOwner, setOnDoorHouseOwner] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
 
+  const toggleModal = () => {
+    setModalVisible(!modalVisible);
+  };
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -291,6 +295,9 @@ function App() {
         <div>
           Current map: {currentMapCoords.row}, {currentMapCoords.col}
         </div>
+        <div>
+          Current tile: {characterPos.x}, {characterPos.y}
+        </div>
         {errand && (
           <div>
             {errand.targetHouse} lives on map: {errand.targetMap.row},{" "}
@@ -305,6 +312,29 @@ function App() {
         )}
         {onDoorHouseOwner && <div>{onDoorHouseOwner}'s House</div>}
       </div>
+      <div className="info-button" onClick={toggleModal}>
+        ?
+      </div>
+      {modalVisible && (
+        <div className="modal">
+          <div className="modal-content">
+            <h2>Errand Running Game</h2>
+            <p>
+              This is an errand running game. Control your character to move him
+              across the maps and run errands for people living in this world.
+            </p>
+            <p>
+              This game was created entirely by GPT-4. I spent a long time going back and forth to get the desired behavior, but, the LLM wrote the code.
+            </p>
+            <p>Author: Chris Dzoba & GPT-4</p>
+            <p>Twitter: @chrisdzoba</p>
+            <p>Code: http://github.com</p>
+            <button className="modal-close" onClick={toggleModal}>
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

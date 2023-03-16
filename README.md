@@ -1,70 +1,23 @@
-# Getting Started with Create React App
+# Errand Runner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a react-based errand running RPG with code written entirely by GPT-4 (via the ChatGPT interface). 
 
-## Available Scripts
+## Creation
 
-In the project directory, you can run:
+The original prompt I supplied the model is available in prompt.txt. It took a lot of back and forth to get the game where it is now.
 
-### `npm start`
+Two things I was unable to get GPT-4 to do:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1) Maps sliding into view upon map change.  When the character touches the edge of a map now, the new map instantly appears.  This is a little jarring.  I would've preferred for the map to slide into view so the user has a clearer understanding of what to do.  After lots of coaxing, I eventually gave up on GPT-4 being able to do this.
+2) AI driving. I wanted the character to be driven by a character AI.  I tried many methods to coax GPT-4 to write some pathfinding and goal selection code.  GPT-4 did try every time, but, seemed to get very confused.  Ultimately I gave up.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+The graphic for the character was created with DALL·E 2.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Running
+This game will run like any other create-react-app
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+npm i
+npm run start
+```

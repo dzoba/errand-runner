@@ -1,0 +1,48 @@
+Today I’d like you to generate code for a React-based game using create react app.  I’d like you to generate the entire code for the game in one single App.js file.  Please provide the complete implementation of all functions for the entire file.
+
+*Concept*
+The general idea is to have an overhead view of of a map, in the style of 2d SNES RPG games.  The setting is a lush green landscape with houses dotted across it. The main activity is the primary character will visit the houses, receive an item to be delivered to another house, and then deliver it to another house.  This happens over and over, indefinitely.
+
+*General UI*
+The page will be divided into two main sections.  On top, composing the majority of the screen will be the view of the map and the character. Below that, there will be a small info bar.  The info bar will be able to display messages like “Rita has asked you to deliver a bucket to Richard’s house”.  It will also contain information about how many items have been delivered.
+
+The UI of the map view will allow the main character to move freely across the map until the character reaches the map’s edge.  Then, the adjacent map will be loaded.
+
+*Map*
+There are two concepts related to the map: individual maps, and the super map.  The player is shown one map at a time, but the entire game is composed of one super map.  When a player navigates to the edge of one map, the the super map is used to determine the adjacent map to display. The size of the super map should be easily configurable in the code.  To start, lets begin with a 3x3 super map.
+
+Map content is randomly generated on each page view.  Elements on the map are persistent until the user refreshes.  Each map will be composed of tiles. Entities on the map include: pond (multiple connected tiles), shrub (one single tile), and house (multiple connected tiles of standard shape).  Ponds, shrubs, and houses are impassable. Additionally, grass is present on the map in all places where there is no pond, shrub, or house.
+
+The map size will be 40 tiles wide by 30 tiles tall.
+
+For now, represent ponds as blue, grass as light green, shrubs as dark green, and houses as light brown with the door as dark brown.
+
+Each map has at least 2 houses on it and at most one pond. At least 6 shrubs.
+
+*Character*
+The character is the size of one tile. The character can move freely over the top of the grid, but cannot pass through ponds, shrubs, or houses. The character is represented with a white square.
+
+*Houses*
+Houses are scattered across the map.  They stand freely and do not overlap each other.  Houses are 5 tiles wide and 4 tiles tall.  In the bottom center of the house is the door.
+
+Each house has a name associated with it.  The names are names that you might find in a medieval village.  The names are used when assigning errands.
+
+*Items*
+The game has a list of 20 objects that need to be delivered.  These are items that you might find in an old village or RPG game of a village.  For example: bucket, sword, candle, etc.
+
+*Errands*
+The character can exist in two states: running an errand, or not running an errand.
+
+If the character is not running an errand and touches the door of a house then a message is displayed in the info bar.  The message fits this format: ”{owner_of_house} asks you to take ${random_item} to ${random_other_house_owners_name}’s house”.  At this point, the character is then in “running an errand” mode.
+
+If the character is in running an errand mode, two things can happen:
+1. If they touch the door of a house that is not who they need to deliver the item to, then the info bar says “This is not ${random_other_house_owners_name}’s house!”
+2. If they touch the door of the house they are supposed to deliver the item, they receive a message that says “Oh wow, ${random_other_house_owners_name} thanks you so much for the ${random_item}”. The character is no longer in the state of running an errand.
+
+*Info Bar*
+The info bar contains textual information for the user.  It will indicate:
+
+1. How many items have been delivered
+2. The row and column of the current map in the super map.  For example it might say “Current map: 0,1”.  This updates whenever the map is changed.
+3. If the user is in running an errand mode, it will give the location of the house in the super map.  For example, it might say: “${random_other_house_owners_name} map: 2,2”
+4. Messages that appear as described above
