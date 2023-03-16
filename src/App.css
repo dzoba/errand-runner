@@ -77,3 +77,38 @@
   cursor: pointer;
   margin-top: 20px;
 }
+
+.arrow-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+}
+
+.arrow-row {
+  display: flex;
+  justify-content: center;
+}
+
+.arrow-controls button {
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  user-select: none;
+  margin: 5px;
+}
+
+.arrow-controls button:focus {
+  outline: none;
+}
+
+/* Media query to display arrow controls on mobile devices */
+@media screen and (min-width: 768px) {
+  .arrow-controls {
+    display: none;
+  }
+}

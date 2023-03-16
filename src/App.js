@@ -181,6 +181,11 @@ function App() {
     setModalVisible(!modalVisible);
   };
 
+  const simulateKeyPress = (key) => {
+    const event = new KeyboardEvent("keydown", { key });
+    document.dispatchEvent(event);
+  };
+
   useEffect(() => {
     const handleKeyPress = (e) => {
       const moveCharacter = (dx, dy) => {
@@ -311,6 +316,18 @@ function App() {
           </div>
         )}
         {onDoorHouseOwner && <div>{onDoorHouseOwner}'s House</div>}
+      </div>
+      <div className="arrow-controls">
+        <div className="arrow-row">
+          <button className="arrow up" onClick={() => simulateKeyPress("ArrowUp")}>&uarr;</button>
+        </div>
+        <div className="arrow-row">
+          <button className="arrow left" onClick={() => simulateKeyPress("ArrowLeft")}>&larr;</button>
+          <button className="arrow right" onClick={() => simulateKeyPress("ArrowRight")}>&rarr;</button>
+        </div>
+        <div className="arrow-row">
+          <button className="arrow down" onClick={() => simulateKeyPress("ArrowDown")}>&darr;</button>
+        </div>
       </div>
       <div className="info-button" onClick={toggleModal}>
         ?
