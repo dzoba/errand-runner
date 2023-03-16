@@ -320,15 +320,12 @@ function App() {
           <div className="modal-content">
             <h2>Errand Running Game</h2>
             <p>
-              This is an errand running game. Control your character to move him
-              across the maps and run errands for people living in this world.
-            </p>
-            <p>
-              This game was created entirely by GPT-4. I spent a long time going back and forth to get the desired behavior, but, the LLM wrote the code.
+              Use the arrow keys to control your character to move him
+              across the map and run errands for people living in this world.
             </p>
             <p>Author: Chris Dzoba & GPT-4</p>
-            <p>Twitter: @chrisdzoba</p>
-            <p>Code: http://github.com</p>
+            <p>Twitter: <a href="https://twitter.com/ChrisDzoba">@chrisdzoba</a></p>
+            <p>Code: <a href="https://github.com/dzoba/errand-runner">https://github.com/dzoba/errand-runner</a></p>
             <button className="modal-close" onClick={toggleModal}>
               Close
             </button>
