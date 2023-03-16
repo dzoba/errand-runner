@@ -2,6 +2,7 @@
 
 This is a react-based errand running RPG with code written entirely by GPT-4 (via the ChatGPT interface). 
 
+See it live here: [https://errandrunner.dev/](https://errandrunner.dev/)
 ## Creation
 
 The original prompt I supplied the model is available in prompt.txt. It took a lot of back and forth to get the game where it is now.
