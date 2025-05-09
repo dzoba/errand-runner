@@ -58,11 +58,6 @@ const houseNames = [
   "Jocelyn",
 ];
 
-function generateHouse() {
-  const name = houseNames[Math.floor(Math.random() * houseNames.length)];
-  return { name, itemsDelivered: 0 };
-}
-
 function createEmptyMap() {
   const map = new Array(MAP_HEIGHT).fill(null).map(() => {
     return new Array(MAP_WIDTH).fill(TileTypes.GRASS);
@@ -168,7 +163,7 @@ function createSuperMap() {
 }
 
 function App() {
-  const [superMap, setSuperMap] = useState(createSuperMap());
+  const [superMap] = useState(createSuperMap());
   const [currentMap, setCurrentMap] = useState(superMap[0][0]);
   const [characterPos, setCharacterPos] = useState({ x: 1, y: 1 });
   const [errand, setErrand] = useState(null);
