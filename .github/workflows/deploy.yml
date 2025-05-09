@@ -5,6 +5,9 @@ on:
     branches:
       - main  # or master, depending on your default branch name
 
+permissions:
+  contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -24,9 +27,8 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          folder: build  # The folder containing the built React app
-          branch: gh-pages  # The branch to deploy to
-          clean: true  # Automatically remove deleted files from the deployment
-          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically creates this secret
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build
+          force_orphan: true

@@ -51,14 +51,10 @@ npm run deploy
 To complete the setup:
 
 1. Go to your GitHub repository settings
-2. Navigate to "Actions" → "General" 
-3. Under "Workflow permissions", select "Read and write permissions"
-4. Click "Save"
-
-5. Navigate to "Pages"
-6. Under "Build and deployment", select "Deploy from a branch"
-7. Choose "gh-pages" branch and "/ (root)" folder
-8. Click "Save"
+2. Navigate to "Pages"
+3. Under "Build and deployment", select "Deploy from a branch"
+4. Choose "gh-pages" branch and "/ (root)" folder
+5. Click "Save"
 
 The deployed site will be available at: https://dzoba.github.io/errand-runner/
 
