@@ -36,3 +36,15 @@ This game will run like any other create-react-app
 npm i
 npm run start
 ```
+
+## Deployment
+This project is configured to deploy automatically to GitHub Pages:
+
+1. Any changes pushed to the main branch will be automatically deployed via GitHub Actions
+2. The pre-commit hook automatically builds the project before each commit
+3. You can also manually deploy by running:
+```
+npm run deploy
+```
+
+The deployed site will be available at: https://dzoba.github.io/errand-runner/
