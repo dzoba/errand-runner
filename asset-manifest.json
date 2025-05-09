@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/errand-runner/static/css/main.a61ce9c6.css",
+    "main.js": "/errand-runner/static/js/main.40441224.js",
+    "static/js/787.198725cb.chunk.js": "/errand-runner/static/js/787.198725cb.chunk.js",
+    "static/media/character.png": "/errand-runner/static/media/character.3f19fa0730751521cf7e.png",
+    "index.html": "/errand-runner/index.html",
+    "main.a61ce9c6.css.map": "/errand-runner/static/css/main.a61ce9c6.css.map",
+    "main.40441224.js.map": "/errand-runner/static/js/main.40441224.js.map",
+    "787.198725cb.chunk.js.map": "/errand-runner/static/js/787.198725cb.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a61ce9c6.css",
+    "static/js/main.40441224.js"
+  ]
+}
