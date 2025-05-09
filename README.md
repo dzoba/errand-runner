@@ -5,7 +5,7 @@
 
 This is a react-based errand running RPG with code written entirely by GPT-4 (via the ChatGPT interface). 
 
-See it live here: [https://errandrunner.dev/](https://errandrunner.dev/)
+See it live here: [https://dzoba.github.io/errand-runner/](https://dzoba.github.io/errand-runner/)
 ## Creation
 
 The original prompt I supplied the model is available in [prompt.txt](prompt.txt)
@@ -46,5 +46,18 @@ This project is configured to deploy automatically to GitHub Pages:
 ```
 npm run deploy
 ```
+
+### GitHub Pages Setup
+To complete the setup:
+
+1. Go to your GitHub repository settings
+2. Navigate to "Actions" → "General" 
+3. Under "Workflow permissions", select "Read and write permissions"
+4. Click "Save"
+
+5. Navigate to "Pages"
+6. Under "Build and deployment", select "Deploy from a branch"
+7. Choose "gh-pages" branch and "/ (root)" folder
+8. Click "Save"
 
 The deployed site will be available at: https://dzoba.github.io/errand-runner/

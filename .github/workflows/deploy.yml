@@ -29,3 +29,4 @@ jobs:
           folder: build  # The folder containing the built React app
           branch: gh-pages  # The branch to deploy to
           clean: true  # Automatically remove deleted files from the deployment
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub automatically creates this secret
