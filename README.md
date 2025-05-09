@@ -47,4 +47,4 @@ This project is configured to deploy automatically to GitHub Pages:
 npm run deploy
 ```
 
-The deployed site will be available at: https://errandrunner.dev/
+The deployed site will be available at: https://dzoba.github.io/errand-runner/
